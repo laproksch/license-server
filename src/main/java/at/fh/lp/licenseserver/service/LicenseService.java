@@ -24,6 +24,10 @@ public class LicenseService {
         return licenseRepository.findById(licenseId).orElseThrow();
     }
 
+    public License getLicenseByFingerprint(String fingerprint) {
+        return licenseRepository.findFirstByFingerprint(fingerprint);
+    }
+
     public License createLicense(License license) {
         return licenseRepository.save(license);
     }

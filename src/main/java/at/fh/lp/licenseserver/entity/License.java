@@ -1,5 +1,6 @@
 package at.fh.lp.licenseserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,8 +20,8 @@ public class License {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
-    private String fingerprint;
     private Date expireDate;
+    private String fingerprint;
     private Date lastCheck;
     private boolean active;
 

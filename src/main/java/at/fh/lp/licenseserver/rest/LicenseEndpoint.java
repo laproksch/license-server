@@ -37,6 +37,7 @@ public class LicenseEndpoint {
             license = licenseService.createLicense(license);
         }
         license.setLastCheck(new Date());
+        license.setInUse(true);
         license = licenseService.updateLicense(license);
         return licenseMapper.map(license);
     }

@@ -23,15 +23,15 @@ public class LicenseServerApplication {
 	}
 
 	@Bean
-	public CommandLineRunner run() throws Exception {
+	public CommandLineRunner run() {
 		return (args) -> {
 			log.info("Adding demo license data to DB");
-			licenseService.createLicense(new License("Client 1", "xxxx", new Date(), new Date(), true));
-			licenseService.createLicense(new License("Client 2", "yyyy", new Date(), new Date(), true));
-			licenseService.createLicense(new License("Client 3", "yyyy", new Date(), new Date(), false));
-			/* Date validDate = new Date();
-			validDate.setTime(validDate.getTime() + 24 * 60 * 60 * 1000);
-			licenseService.createLicense(new License("Lokal MacBook", "18-3E-EF-E9-0E-4C", validDate, new Date(), true));*/
+			licenseService.createLicense(
+				new License("Client 1", "xxxx", new Date(), new Date(), true, true));
+			licenseService.createLicense(
+				new License("Client 2", "yyyy", new Date(), new Date(), true, true));
+			licenseService.createLicense(
+				new License("Client 3", "zzzz", new Date(), new Date(), false, true));
 		};
 	}
 }
